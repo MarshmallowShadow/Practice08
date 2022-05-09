@@ -16,8 +16,13 @@ public class Div {
     }
 
     public int calculate() {
-    	int quot = a / b;
-    	return quot;
+    	try {
+    		int quot = a / b;
+    		return quot;
+    	} catch (ArithmeticException e) {
+    		System.out.println("0으로 나눌 수 없습니다.");
+    		return 0;
+    	}
     }
 
 }
