@@ -9,6 +9,7 @@ public class CalcApp {
     	
     	int a;
     	int b;
+    	String op;
     	int value;
     	
     	while(true) {
@@ -22,37 +23,37 @@ public class CalcApp {
     		String[] inputArray = inputLine.split(" ");
 			a = Integer.parseInt(inputArray[0]);
 			b = Integer.parseInt(inputArray[2]);
+			op = inputArray[1];
 			
-			switch(inputArray[1]) {
-				case("+"):
-					Add add = new Add(a,b);
-					value = add.calculate();
-					System.out.println(">> " + value);
-					break;
-				case("-"):
-					Sub sub = new Sub(a,b);
-					sub.calculate();
-					value = sub.calculate();
-					System.out.println(">> " + value);
-					break;
-				case("*"):
-					Mul mul = new Mul(a,b);
-					value = mul.calculate();
-					System.out.println(">> " + value);
-					break;
-				case("/"):
-					Div div = new Div(a,b);
-					value = div.calculate();
-					System.out.println(">> " + value);
-					break;
-				case("%"):
-					Mod mod = new Mod(a,b);
-					value = mod.calculate();
-					System.out.println(">> " + value);
-					break;
-				default:
-					System.out.println("알 수 없는 연산입니다.");
-					break;
+			if(op.equals("+")) {
+				Add add = new Add(a,b);
+				value = add.calculate();
+				System.out.println(">> " + value);
+			}
+			else if(op.equals("-")) {
+				Sub sub = new Sub(a,b);
+				sub.calculate();
+				value = sub.calculate();
+				System.out.println(">> " + value);
+    		}
+			else if(op.equals("*")) {
+    			Mul mul = new Mul(a,b);
+				value = mul.calculate();
+				System.out.println(">> " + value);
+    		}
+			else if(op.equals("/")) {
+    			Div div = new Div(a,b);
+				value = div.calculate();
+				System.out.println(">> " + value);
+    		}
+			else if(op.equals("%")) {
+    			Mod mod = new Mod(a,b);
+				value = mod.calculate();
+				System.out.println(">> " + value);
+    		}
+			else {
+				System.out.println("알 수 없는 연산입니다.");
+				break;
     		}
     	}
     	
