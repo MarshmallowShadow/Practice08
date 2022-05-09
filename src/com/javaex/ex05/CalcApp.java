@@ -53,7 +53,6 @@ public class CalcApp {
     		}
 			else {
 				System.out.println("알 수 없는 연산입니다.");
-				break;
     		}
     	}
     	
